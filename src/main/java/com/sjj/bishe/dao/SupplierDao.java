@@ -9,4 +9,5 @@ import java.util.List;
 public interface SupplierDao extends JpaRepository<Supplier,Integer> {
             List<Supplier> findByconameLike(String keywords);
 
+
 }

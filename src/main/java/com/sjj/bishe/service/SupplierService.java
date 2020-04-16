@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SupplierService {
@@ -29,7 +30,8 @@ public class SupplierService {
         return supplier;
     }
 
-    public void deleteByid (int id) {
+
+    public void deleteById(int id){
         supplierDao.deleteById(id);
     }
 
@@ -44,6 +46,12 @@ public class SupplierService {
     public List<Supplier> findByconameLike(String keywords){
 
         return supplierDao.findByconameLike("%"+keywords+"%");
+    }
+
+
+    /*根据id查找*/
+    public Supplier findById(int id){
+       return supplierDao.findById(id).get();
     }
 
 }
