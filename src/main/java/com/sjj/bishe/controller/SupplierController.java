@@ -32,7 +32,7 @@ public class SupplierController {
       supplierService.deleteById(id);
   }
 
-  @GetMapping("/api/findBycoameLike")
+  @GetMapping("/api/findByconameLike")
     public List<Supplier> findByNameLike(@RequestParam("keywords") String keywords)throws Exception{
                 if("".equals(keywords)){
                     return null;
@@ -49,7 +49,7 @@ public class SupplierController {
         return supplierService.findAll(page,size);
     }
 
-
+/*增加供应商信息*/
     @PostMapping("/api/save")
     public String save(@RequestBody Supplier supplier){
    Supplier result= supplierService.addOrUpdate(supplier);
@@ -58,7 +58,7 @@ public class SupplierController {
     else{return"error";}
     }
 
-
+/*修改供应商信息*/
     @PutMapping("/api/update")
     public String update(@RequestBody Supplier supplier){
         Supplier result= supplierService.addOrUpdate(supplier);
@@ -66,7 +66,7 @@ public class SupplierController {
         if( result!=null) {return "success";}
         else{return"error";}
     }
-
+/*根据ID查供应商信息*/
     @GetMapping("/api/findById/{id}")
     public Supplier findById(@PathVariable("id") int id)throws Exception{
         return supplierService.findById(id);
