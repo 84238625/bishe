@@ -2,7 +2,6 @@ package com.sjj.bishe.controller;
 
 
 import com.sjj.bishe.pojo.Goods;
-import com.sjj.bishe.pojo.Supplier;
 import com.sjj.bishe.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
